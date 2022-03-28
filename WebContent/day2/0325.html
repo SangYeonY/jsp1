@@ -1,18 +1,14 @@
+<!--작성자: 윤상연  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>화면구현: 문제2</title>
     <!-- font awesome 이라는 자바스크립트 라이브러리 활요하여 아이콘 사용을 할 수 있습니다.
          아이콘을 이미지가 아닌 글꼴 처럼 다룰수 있습니다. -->
-    <script src="https://kit.fontawesome.com/8c0ac4dbcb.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
-        *{  /* 모든 요소 */
-            font-family: 'Gamja Flower', cursive;
-        }
         table{
             border-top: 3px solid gray;
             border-bottom: 3px solid gray;
@@ -35,7 +31,7 @@
         }
 
         label.title{
-            display: inline-block;  /* label 태그에는 너비가 적용안됩니다.(block요소가 아님)-> 너비가 적용되도록 합니다. */
+            display: inline-block;  
             padding: 10px;
             width: 70%;
             background-color: #c69 ;
@@ -53,7 +49,6 @@
             cursor: pointer;
             border-radius: 4px;
         }
-        /* 선택자 : 마우스가 놓여질때 변경될 css */
         button:hover{
             background-color: rgb(75, 2, 39);
         }
@@ -65,14 +60,18 @@
 <div style="width:70%;margin:auto;"><!-- table 을 포함하는 박스 -->
 <h3 style="text-align: center;">회원등록 
     <i class="fa-solid fa-camera-retro" style="color:blueviolet;font-size: 1.5em;"></i></h3>    
-<form action=""> 
+<form action="memberReg.jsp" method="post"> 
     <table  style="width: 100%;">  <!-- 부모태그 div 너비의 100% -->
         <tr>   
             <td>
-                <label for="name" class="title">이름</label>
+                <label for="id" class="title">회원아이디</label>
+            <td><input type="text" id="id" name="id"></td>
             </td>
-            <td><input type="text" id="name" name="name"></td>
         </tr>
+        <tr>
+            <td><label for="name" class="title" >이름</label></td>
+            <td><input type="text" id="name" name="name"></td>
+        </tr> 
         <tr>
             <td><label for="password" class="title" >패스워드</label></td>
             <td><input type="password" id="password" name="password"></td>
@@ -90,10 +89,10 @@
             <td>
                  <select name="addr" id="addr">
                        <option value="서울">서울</option> 
-                       <option value="인천">인천</option> 
-                       <option value="대전" selected="selected">대전</option> <!-- 초기 선택 설정 -->
-                       <option value="광주">광주</option> 
-                       <option value="부산">부산</option> 
+                       <option value="경기">경기</option> 
+                       <option value="충청">충청</option> <!-- 초기 선택 설정 -->
+                       <option value="강원">강원</option> 
+                       <option value="제주">제주</option> 
                  </select>   
             </td>
         </tr>
